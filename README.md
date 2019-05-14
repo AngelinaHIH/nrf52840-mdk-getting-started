@@ -23,6 +23,13 @@ $ cd ~/zephyr
 $ pip3 install --user -r scripts/requirements.txt
 ```
 
+Add variable configs to `~/.bash_profile`:
+
+```
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+```
+
 ## Build IoT Application
 
 ```
