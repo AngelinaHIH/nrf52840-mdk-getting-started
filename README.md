@@ -30,6 +30,12 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 ```
 
+## Install PyOCD
+
+```
+$ pip3 install -U pyocd
+```
+
 ## Build IoT Application
 
 ```
@@ -41,12 +47,18 @@ $ source zephyr-env.sh
 $ git clone https://github.com/flowchain/nrf52840-mdk
 $ cd <path-to-your-nrf52840-mdk>/nrf52840-mdk/examples/zephyr/blinky
 $ mkdir build; cd build
-$ cmake -GNinja -DBOARD=nrf52840_mdk .. -B./
+$ cmake -GNinja -DBOARD=nrf52840_mdk ..
+$ ninja
 ```
 
+Or use `west` directly:
+
 ```
-$ ninja
-$ ninja flash
+$ pip3 install west --user
+$ west init
+$ cd <path-to-your-nrf52840-mdk>/nrf52840-mdk/examples/zephyr/blinky
+$ west build -b nrf52840_mdk 
+$ west flash
 ```
 
 ## Build JerryScript on Zephyr
