@@ -23,7 +23,7 @@ $ cd ~/zephyr
 $ pip3 install --user -r scripts/requirements.txt
 ```
 
-## Build Zephyr
+## Build IoT Application
 
 ```
 $ cd <path-to-zephyr>
@@ -31,9 +31,13 @@ $ source zephyr-env.sh
 ```
 
 ```
+$ git clone https://github.com/flowchain/nrf52840-mdk
 $ cd <path-to-your-nrf52840-mdk>/nrf52840-mdk/examples/zephyr/blinky
 $ mkdir build; cd build
 $ cmake -GNinja -DBOARD=nrf52840_mdk -B./
+```
+
+```
 $ ninja
 $ ninja flash
 ```
