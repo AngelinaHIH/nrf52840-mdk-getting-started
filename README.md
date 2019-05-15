@@ -43,20 +43,34 @@ $ cd <path-to-zephyr>
 $ source zephyr-env.sh
 ```
 
-```
-$ git clone https://github.com/flowchain/nrf52840-mdk
-$ cd <path-to-your-nrf52840-mdk>/nrf52840-mdk/examples/zephyr/blinky
-$ mkdir build; cd build
-$ cmake -GNinja -DBOARD=nrf52840_mdk ..
-$ ninja
-```
-
-Or use `west` directly:
+Install Zephyr `west`:
 
 ```
 $ pip3 install west --user
-$ west init
+```
+
+Download the official `nrf52840-mdk` sdk and initialize the `west` environment:
+
+```
+$ git clone https://github.com/makerdiary/nrf52840-mdk
 $ cd <path-to-your-nrf52840-mdk>/nrf52840-mdk/examples/zephyr/blinky
+$ west init
+```
+
+Create a `build` directory and start the project build:
+
+``
+$ mkdir build; cd build
+$ cmake -GNinja -DBOARD=nrf52840_mdk ..
+$ ninja
+$ ninja flash
+```
+
+You can use `west` directly:
+
+```
+$ cd <path-to-your-nrf52840-mdk>/nrf52840-mdk/examples/zephyr/blinky
+$ west init
 $ west build -b nrf52840_mdk 
 $ west flash
 ```
