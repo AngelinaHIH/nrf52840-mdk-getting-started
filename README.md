@@ -59,7 +59,7 @@ $ west init
 
 Create a `build` directory and start the project build:
 
-``
+```
 $ mkdir build; cd build
 $ cmake -GNinja -DBOARD=nrf52840_mdk ..
 $ ninja
